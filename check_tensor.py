@@ -1,6 +1,5 @@
-try:
-    import tensorflow as tf 
-    for dev in tf.config.list_physical_devices():
-        print(dev)
-except Exception as e:
-    print(e)
+import tensorflow as tf 
+
+def test_gpu():
+    assert len(tf.config.list_physical_devices('GPU')) != 0
+

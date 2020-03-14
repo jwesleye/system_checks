@@ -1,14 +1,13 @@
-try:
-    import torch
-    if torch.cuda.is_available():
-        gpu_device_count = torch.cuda.device_count()
-        print("GPU devices available: %d" % gpu_device_count)
-        for c in range(0, gpu_device_count):
-            print(torch.cuda.get_device_name(device=c), torch.cuda.get_device_capability(device=c))
-    else:
-        print("CPU only")
-except Exception as e:
-    print(e)
+import torch
 
 
+#version 1.4.0 on March 13th 2020
+def test_torch_version():
+    assert torch.__version__== '1.4.0'
+
+def test_cuda():
+    assert torch.cuda.is_available() == True
+
+def test_gpu():
+    assert torch.cuda.device_count() != 0 
 
