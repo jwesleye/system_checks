@@ -1,9 +1,9 @@
 import torch
 
 
-#version 1.6.0 on Sept 1 2020
+#version
 def test_torch_version():
-    assert torch.__version__ >= '1.6.0'
+    assert torch.__version__ >= '1.10'
 
 
 def test_cuda():
